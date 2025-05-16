@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsante di Reindirizzamento</title>
+</head>
+<body>
+    <button onclick="window.location.href='/data';">Visualizza il file access.log di Apache</button>
+</body>
+<h1>Lista delle spedizioni estratta da DB</h1>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>id</th>
+        <th>id_ordine</th>
+        <th>tracking_ordine</th>
+        <th>data_prevista</th>
+        <th>data_effettiva</th>
+        <th>qr_code</th>
+        <th>ritirato</th>
+    </tr>
+    {% for prodotto in prods %}
+    <tr>
+        <td>{{ prodotto.id }}</td>
+        <td>{{ prodotto.id_ordine }}</td>
+        <td>{{ prodotto.tracking_ordine }}</td>
+        <td>{{ prodotto.data_prevista }}</td>
+        <td>{{ prodotto.data_effettiva }}</td>
+        <td>{{ prodotto.qr_code }}</td>
+        <td>{{ prodotto.ritirato }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</html>
+
+
